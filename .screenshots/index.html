@@ -12,6 +12,16 @@
       border: 2px solid #ccc;
       border-radius: 5px;
     }
+
+    #summary-input {
+      width: 90%;
+      height: 100px;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 18px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
     
     #play-button {
       display: block;
@@ -39,10 +49,12 @@
   <h1>MindMate</h1>
   <textarea id="text-input" placeholder="Enter text to convert"></textarea>
   <button id="play-button">Play</button>
+  <textarea id="summary-input" placeholder="Enter summary"></textarea>
   
   <script>
     var playButton = document.getElementById('play-button');
     var textInput = document.getElementById('text-input');
+    var summaryInput = document.getElementById('summary-input');
     var speechSynthesis = window.speechSynthesis;
     
     playButton.addEventListener('click', function() {
