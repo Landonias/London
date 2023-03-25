@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MindMate</title>
+  <style>
+    #text-input {
+      width: 90%;
+      height: 100px;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 18px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    #play-button {
+      display: block;
+      width: 100px;
+      height: 40px;
+      margin: 20px auto;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* New CSS for bolding last 2 letters of each word */
+    #text-input::first-letter {
+      color: grey;
+    }
+    #text-input::last-two-letters {
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>MindMate</h1>
+  <textarea id="text-input" placeholder="Enter text to convert"></textarea>
+  <button id="play-button">Play</button>
+  
+  <script>
+    var playButton = document.getElementById('play-button');
+    var textInput = document.getElementById('text-input');
+    var speechSynthesis = window.speechSynthesis;
+    
+    playButton.addEventListener('click', function() {
+      var speechText = new SpeechSynthesisUtterance(textInput.value);
+      speechSynthesis.speak(speechText);
+    });
+  </script>
+</body>
+</html>
